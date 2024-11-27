@@ -1,0 +1,22 @@
+@import '/src/styles/mixins.scss';
+
+.column {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: cyan;
+  width: 272px;
+  max-width: 272px;
+  border-radius: 15px;
+  padding: 0 4px 8px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  @include media-breakpoint(1465px){
+    width: 172px;
+    max-width: 172px;
+  }
+  @include media-breakpoint(1068px){
+    width: 100px;
+    max-width: 100px;
+  }
+}

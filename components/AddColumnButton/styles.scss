@@ -1,0 +1,32 @@
+@import '/src/styles/mixins.scss';
+
+.add-column-button {
+  @include flex(row,center,center);
+  background-color: lightgrey;
+  color: black;
+  width: 272px;
+  max-width: 272px;
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin-right: 12px;
+  user-select: none;
+  transition: all 85ms ease-in;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    background-color: burlywood;
+  }
+  @include media-breakpoint(1465px){
+    width: 172px;
+    max-width: 172px;
+  }
+  @include media-breakpoint(1068px){
+    width: 100px;
+    max-width: 100px;
+  }
+}

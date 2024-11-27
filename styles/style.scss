@@ -1,0 +1,79 @@
+@import './mixins.scss';
+@import './theme.scss';
+
+* {
+  box-sizing: border-box;
+  border: none;
+
+  a,
+  a:hover {
+    text-decoration: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+  padding: 40px 80px !important;
+  background: radial-gradient(darken($primary-blue, 5%) 2px, $primary-blue 2px) !important;
+  background-size: 10px 10px !important;
+  min-height: 100%;
+  @include flex(column, center, center);
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-grow: 1;
+  border-radius: 40px;
+  background: linear-gradient(270deg, #212123, #171719) border-box !important;
+  color: black !important;
+  overflow: hidden;
+  padding: 5px !important;
+  position: relative;
+  @include media-breakpoint(620px){
+    background: beige !important;
+
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px;
+    padding: 10px;
+    background: beige;
+    -webkit-mask: beige content-box,beige;
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+    @include media-breakpoint(620px){
+      content: none;
+    }
+  }
+  #root {
+  height: 100%;
+
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+   
+  }
+}
+
+@include media-breakpoint(680px) {
+  html {
+    padding: 0 !important;
+    background: none !important;
+  }
+}
+
+@include media-breakpoint(319px) {
+  * {
+    display: none !important;
+  }
+}
